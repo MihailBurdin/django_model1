@@ -1,0 +1,24 @@
+<!-- news_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News List</title>
+    <!-- Ваши стили могут быть подключены здесь -->
+</head>
+<body>
+
+    <h1>News List</h1>
+
+    {% for n in news %}
+        <h2>{{ n.title }}</h2>
+        {% if n.image %}
+            <img src="{{ n.image.url }}" alt="{{ n.title }}">
+        {% endif %}
+        <p>{{ n.text|safe }}</p>
+    {% endfor %}
+
+</body>
+</html>
